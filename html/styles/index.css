@@ -1,0 +1,242 @@
+:root {
+  --padding-default: 2px;
+  --padding-small: 0.7px;
+  --borderRadius-default: 5px;
+
+  --color-white: #f1faee;
+  --color-green: #a1c181;
+  --color-green-light: #00ff00;
+  --color-red: #bc3908;
+  --color-orange: #f6aa1c;
+  --color-orange-2: #cd8e17;
+  --color-yellow: #ffff00;
+  --color-dark: #0d1321;
+
+  --color-background: #233d4d;
+  --color-background-1: #619b8a;
+  --color-background-2: #3e5c76;
+  --color-background-3: #38a3a5;
+  --color-background-4: #467a9a;
+  --color-background-5: #4ad7db;
+  --color-background-popout: #1d2d44;
+  --color-background-chat-user: #2e8588;
+  --color-background-chat-timestamp: #4ad7db;
+  --color-background-chat-message: #174445;
+  --color-background-chat-message-input: #345b73;
+  --color-background-chat-message-input-outline: #467a9a;
+  --color-background-chat-users-add-input: #345b73;
+  --color-background-chat-users-add-outline: #467a9a;
+  --color-background-chat-chats-active: #5d8ab1;
+
+  --color-border-light: #f1faee75;
+  --color-border-dark: #0d132185;
+  --color-border-chat-messages-user: #45c8cc;
+  --color-border-chat-messages-timestamp: #2e8588;
+
+  --color-background-process: #a8dadc;
+
+  --font-size-default: 15px;
+  --font-size-default-big: 23px;
+  --font-size-default-big-2: 30px;
+  --font-size-default-small: 15px;
+
+  --margin-default: 2px;
+
+  padding: var(--padding-default);
+  border-radius: var(--borderRadius-default);
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: var(--color-background);
+  color: #ffffffc7;
+  margin: var(--margin-default);
+  /* height: 99vh; */
+  font-size: var(--font-size-default);
+  position: relative;
+}
+
+body * {
+  padding: 2px;
+  border-radius: 3px;
+  word-break: break-all;
+}
+
+jh,
+.jh {
+  display: block;
+  padding: 2px;
+  margin: 3px;
+}
+
+jtitle,
+.jtitle {
+  font-size: 25px;
+}
+
+.ja {
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  border: transparent;
+  background-color: var(--color-background-3);
+}
+
+button {
+  transform: scale(1);
+  transition: transform 250ms ease-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+  transition: transform 125ms ease-in;
+}
+
+.dp-none,
+.dp-hidden {
+  display: none !important;
+}
+
+.dp-contents {
+  display: contents;
+}
+
+.bg-red,
+.error-highlight {
+  background-color: var(--color-red) !important;
+}
+
+.bg-orange {
+  background-color: var(--color-orange) !important;
+}
+
+.bg-yellow {
+  background-color: var(--color-yellow) !important;
+}
+
+.bg-green {
+  background-color: var(--color-green) !important;
+}
+
+.bg-green-light {
+  background-color: var(--color-green-light) !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+}
+
+.fg-red {
+  color: var(--color-red) !important;
+}
+
+.fg-green {
+  color: var(--color-green) !important;
+}
+
+.fg-black {
+  color: var(--color-dark) !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-sort {
+  cursor: pointer;
+}
+
+.select-none {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.copy {
+  cursor: copy;
+}
+
+.copied {
+  background-color: red !important;
+  cursor: wait;
+}
+
+.qaContainer {
+  background-color: var(--color-background-2);
+  margin: 2px;
+}
+
+.questionH {
+  background-color: var(--color-background-4);
+}
+
+.answerH {
+  background-color: var(--color-background-chat-user);
+}
+
+.ratingContainer {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.ratingContainer jh {
+  aspect-ratio: 1/1;
+  background-color: red;
+  height: 20px;
+  text-align: center;
+  vertical-align: baseline;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ratingNumber {
+  cursor: pointer;
+  user-select: none;
+}
+
+.pageControlContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.pageControlContainer button {
+  height: 22px;
+}
+
+.bottomContainer {
+  position: absolute;
+  background-color: var(--color-background-3);
+  width: 99vw;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+  bottom: 0;
+}
+
+.qaContainerOutter {
+  margin-bottom: 80px;
+  /* height: 70vh; */
+  width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#responseContainer {
+  display: flex;
+  height: 98vh;
+}
+
+jbody {
+  height: 98vh;
+}

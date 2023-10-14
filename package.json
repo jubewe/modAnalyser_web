@@ -1,0 +1,33 @@
+{
+  "name": "modanalyser_web",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jubewe/modAnalyser_web.git"
+  },
+  "author": "jubewe",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jubewe/modAnalyser_web/issues"
+  },
+  "homepage": "https://github.com/jubewe/modAnalyser_web#readme",
+  "dependencies": {
+    "buffer": "^6.0.3",
+    "csv-parse": "^5.5.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "oberknecht-emitters": "^1.0.7",
+    "oberknecht-request": "^0.0.3",
+    "oberknecht-utils": "^1.7.1",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "webpack": "^5.88.2"
+  }
+}
