@@ -26,6 +26,7 @@ let csvLinesRawParsed = [];
         from_line: 1,
         encoding: "utf-8",
         autoParse: true,
+        relax_quotes: true,
       })
     )
     .on("data", (line) => {
