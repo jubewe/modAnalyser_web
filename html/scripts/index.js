@@ -4,6 +4,7 @@ const {
   getKeyFromObject,
   addKeysToObject,
   deleteKeyFromObject,
+  regex,
 } = require("oberknecht-utils");
 
 let url = new URL(document.baseURI);
@@ -172,12 +173,12 @@ class elements {
           innerText: question,
         });
 
-        let answerH = elements.createElement("jh", {
-          classes: ["answerH"],
-          innerText: response[i],
+        let answerContainer = elements.createElement("div", {
+          classes: ["answerContainer"],
         });
+        this.parseText(response[i], answerContainer);
 
-        [questionH, answerH].forEach((a) => qa.appendChild(a));
+        [questionH, answerContainer].forEach((a) => qa.appendChild(a));
 
         qaContainer.appendChild(qa);
       });
@@ -226,13 +227,21 @@ class elements {
         innerText: "Previous",
       });
 
-      let responseNumH = elements.createElement("jh", {
-        innerText: responseNum,
+      let responseNumInput = elements.createElement("input", {
+        classes: ["pageNumberInput"],
+        type: "number",
+        min: 0,
+        value: responseNum,
       });
 
       let nextButton = elements.createElement("button", {
         innerText: "Next",
       });
+
+      responseNumInput.onchange = () => {
+        responseNum = parseInt(responseNumInput.value);
+        elements.loadResponse();
+      };
 
       previousButton.onclick = () => {
         if (responseNum > 0) {
@@ -246,7 +255,7 @@ class elements {
         elements.loadResponse();
       };
 
-      [previousButton, responseNumH, nextButton].forEach((a) =>
+      [previousButton, responseNumInput, nextButton].forEach((a) =>
         pageControlContainer.appendChild(a)
       );
     })();
@@ -259,6 +268,30 @@ class elements {
       responseContainer.appendChild(a)
     );
     document.querySelector("jbody").appendChild(responseContainer);
+  };
+
+  static parseText = (text, container) => {
+    let splits = text.split(regex.urlreg());
+    let matches = text.match(regex.urlreg());
+    splits.forEach((split, i) => {
+      if (split.length > 0 && split !== "https://") {
+        let elem = elements.createElement("jh", {
+          innerText: split.replace(/\\n/g, "\n"),
+        });
+
+        container.appendChild(elem);
+      }
+
+      if (matches?.[i] && matches[i] !== "https://") {
+        let link = matches[i];
+        let elem2 = elements.createElement("a", {
+          href: link,
+          innerText: link,
+        });
+
+        container.appendChild(elem2);
+      }
+    });
   };
 }
 

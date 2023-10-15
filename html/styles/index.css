@@ -176,7 +176,7 @@ button:hover {
   background-color: var(--color-background-4);
 }
 
-.answerH {
+.answerConatiner {
   background-color: var(--color-background-chat-user);
 }
 
@@ -239,4 +239,9 @@ button:hover {
 
 jbody {
   height: 98vh;
+}
+
+.pageNumberInput {
+  width: 50px;
+  background-color: var(--color-background-4);
 }
