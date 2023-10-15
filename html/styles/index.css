@@ -62,7 +62,7 @@ body {
 body * {
   padding: 2px;
   border-radius: 3px;
-  word-break: break-all;
+  /* word-break: break-all; */
 }
 
 jh,

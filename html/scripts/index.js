@@ -287,6 +287,7 @@ class elements {
         let elem2 = elements.createElement("a", {
           href: link,
           innerText: link,
+          target: "_blank"
         });
 
         container.appendChild(elem2);
