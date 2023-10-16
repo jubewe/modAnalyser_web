@@ -245,3 +245,8 @@ jbody {
   width: 50px;
   background-color: var(--color-background-4);
 }
+
+.ratingNumber-selected {
+  /* color: aqua !important; */
+  background-color: aqua !important;
+}

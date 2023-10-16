@@ -193,6 +193,10 @@ class elements {
     });
 
     (() => {
+      let rating = regex.numregex().test(response.at(-1))
+        ? parseInt(response.at(-1))
+        : undefined;
+      
       for (let i = 0; i <= 10; i++) {
         let ratingElem = elements.createElement("jh", {
           innerText: i.toString(),
@@ -203,10 +207,16 @@ class elements {
             ...(i < 9 && i > 6 ? ["bg-yellow"] : []),
             ...(i > 8 ? ["bg-green-light"] : []),
             "fg-black",
+            ...(rating && rating === i ? ["ratingNumber-selected"] : []),
           ],
         });
 
         ratingElem.onclick = () => {
+          rating = i;
+          [
+            ...document.querySelectorAll(".ratingNumber-selected"),
+          ].forEach((a) => a.classList.remove("ratingNumber-selected"));
+          ratingElem.classList.add("ratingNumber-selected");
           sendWC({
             type: "postRating",
             rating: i,
@@ -274,6 +284,7 @@ class elements {
     let splits = text.split(regex.urlreg());
     let matches = text.match(regex.urlreg());
     splits.forEach((split, i) => {
+      if (!split) return;
       if (split.length > 0 && split !== "https://") {
         let elem = elements.createElement("jh", {
           innerText: split.replace(/\\n/g, "\n"),
@@ -287,7 +298,7 @@ class elements {
         let elem2 = elements.createElement("a", {
           href: link,
           innerText: link,
-          target: "_blank"
+          target: "_blank",
         });
 
         container.appendChild(elem2);
