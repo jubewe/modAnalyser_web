@@ -165,13 +165,14 @@ let csvLinesRawParsed = [];
                     wsData.hasGreeted = true;
                   })
                   .catch((e) => {
-                    return sendWC({
-                      error: Error(
-                        "Could not get self of token",
-                        { cause: e },
-                        498
-                      ),
-                    });
+                    return sendWC(
+                      {
+                        error: Error("Could not get self of token", {
+                          cause: e,
+                        }),
+                      },
+                      498
+                    );
                   });
                 break;
               }

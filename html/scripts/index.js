@@ -337,6 +337,7 @@ async function sendWC(stuff, status) {
     });
   });
 }
+
 let wsMsgID = 0;
 document.addEventListener("DOMContentLoaded", () => {
   elements.loadjBody();
