@@ -113,7 +113,7 @@ if (url.searchParams.get("token")) {
 let apiToken = functions.localStorage.getKey("token");
 function openLogin() {
   window.open(
-    `https://jubewe.de/oauth/token?redirect=${url.origin}?login=`,
+    `https://jubewe.de/oauth/token?applicationid=oeagcgpspoecemgpeauu&redirect=${url.origin}`,
     "_self"
   );
 }
