@@ -250,3 +250,7 @@ jbody {
   /* color: aqua !important; */
   background-color: aqua !important;
 }
+
+.answerContainer {
+  margin: 4px;
+}
