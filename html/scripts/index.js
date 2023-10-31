@@ -6,6 +6,10 @@ const {
   deleteKeyFromObject,
   regex,
 } = require("oberknecht-utils");
+const {
+  functions: functions2,
+  elements: elements2,
+} = require("oberknecht-utils-frontend/scripts/defaults/lib-js/defaults");
 
 let url = new URL(document.baseURI);
 const Buffer = require("buffer").Buffer;
@@ -23,7 +27,7 @@ const emitter = new oberknechtEmitter();
 
 let questions = [];
 
-class functions {
+class functions extends functions2 {
   static appendElementOptions = (element, options) => {
     if (!element || !options) return;
     Object.keys(options).forEach((optionName) => {
@@ -119,7 +123,7 @@ function openLogin() {
 }
 if (!apiToken) openLogin();
 let response;
-class elements {
+class elements extends elements2 {
   /** @returns {HTMLElement} */
   static createElement = (elementName, options) => {
     let r = document.createElement(elementName);
@@ -175,8 +179,10 @@ class elements {
 
         let answerContainer = elements.createElement("div", {
           classes: ["answerContainer"],
+          innerText: response[i],
         });
-        this.parseText(response[i], answerContainer);
+
+        elements2.parseLinks(answerContainer, "_blank", false);
 
         [questionH, answerContainer].forEach((a) => qa.appendChild(a));
 
@@ -196,7 +202,7 @@ class elements {
       let rating = regex.numregex().test(response.at(-1))
         ? parseInt(response.at(-1))
         : undefined;
-      
+
       for (let i = 0; i <= 10; i++) {
         let ratingElem = elements.createElement("jh", {
           innerText: i.toString(),

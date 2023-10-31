@@ -1,6 +1,6 @@
 {
   "name": "modanalyser_web",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,7 @@
     "oberknecht-emitters": "^1.0.7",
     "oberknecht-request": "^0.0.3",
     "oberknecht-utils": "^1.7.1",
-    "oberknecht-utils-frontend": "^0.0.1",
+    "oberknecht-utils-frontend": "^0.0.6",
     "ws": "^8.14.2"
   },
   "devDependencies": {
