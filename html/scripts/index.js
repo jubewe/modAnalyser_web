@@ -179,7 +179,7 @@ class elements extends elements2 {
 
         let answerContainer = elements.createElement("div", {
           classes: ["answerContainer"],
-          innerText: response[i],
+          innerText: response[i].replace(/\\n/g, "\n"),
         });
 
         elements2.parseLinks(answerContainer, "_blank", false);
