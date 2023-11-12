@@ -117,7 +117,7 @@ if (url.searchParams.get("token")) {
 let apiToken = functions.localStorage.getKey("token");
 function openLogin() {
   window.open(
-    `https://jubewe.de/oauth/token?applicationid=oeagcgpspoecemgpeauu&redirect=${url.origin}`,
+    `https://jubewe.de/oauth/token?applicationid=wxnqyemjhhqeickownor&redirect=${url.origin}`,
     "_self"
   );
 }
@@ -353,6 +353,9 @@ document.addEventListener("DOMContentLoaded", () => {
   ws.onopen = () => {
     console.log("ws opened");
     sendWC({ type: "GoodMorning", token: apiToken }).then((a) => {
+      setInterval(() => {
+        sendWC({ type: "ah-ah-ah-ah stayin alive, stayin alive" }).catch()
+      }, 15000);
       sendWC({ type: "getQuestions" }).then((b) => {
         questions = b.questions.map((c) =>
           Buffer.from(c, "base64").toString("utf-8")

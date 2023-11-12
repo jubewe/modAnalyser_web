@@ -203,6 +203,14 @@ let csvLinesRawParsed = [];
 
                 break;
               }
+
+              case "ah-ah-ah-ah stayin alive, stayin alive": {
+                break;
+              }
+
+              default: {
+                sendWC({ error: Error("type not found") });
+              }
             }
           });
         });
